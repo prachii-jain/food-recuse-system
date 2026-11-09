@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Food Rescue Rewards & Leaderboard: restaurant points, tiers, redemption and public rankings. Demo data." />
+  <meta name="theme-color" content="#0b3d2e" />
+  <title>Rewards &amp; Leaderboard | Food Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="rewards.css" />
+</head>
+<body class="rw-page">
+  <header class="rw-top">
+    <div class="container rw-top-in">
+      <a href="index.html" class="rw-brand" aria-label="Food Rescue home">🌿 <span>Food Rescue</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="rw-hero" aria-labelledby="hubTitle">
+      <div class="rw-orb o1" aria-hidden="true"></div><div class="rw-orb o2" aria-hidden="true"></div>
+      <div class="container rw-hero-in">
+        <h1 id="hubTitle">Every Meal Rescued <em>Counts.</em></h1>
+        <p>Restaurants earn points, climb tiers and win public recognition for food that actually reaches people.</p>
+        <div class="rw-hero-stats" id="heroStats" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="rw-tabbar" role="tablist" aria-label="Rewards or Leaderboard">
+        <button role="tab" id="tabRewards" aria-controls="panelRewards" aria-selected="true" data-tab="rewards">🎁 Rewards</button>
+        <button role="tab" id="tabBoard" aria-controls="panelBoard" aria-selected="false" data-tab="leaderboard">🏆 Leaderboard</button>
+      </div>
+
+      <section id="panelRewards" role="tabpanel" aria-labelledby="tabRewards" class="rw-panel">
+        <div class="rw-sec-head"><div><h2>Earn Rewards. Create Impact.</h2><p>Every rescued meal brings recognition and rewards.</p></div>
+          <label class="rw-select">Restaurant <select id="rwRestaurant" aria-label="Choose restaurant"></select></label></div>
+        <div id="rwBody"><div class="rw-state">Loading demo data…</div></div>
+      </section>
+
+      <section id="panelBoard" role="tabpanel" aria-labelledby="tabBoard" class="rw-panel" hidden>
+        <div class="rw-sec-head"><div><h2>Food Rescue Champions</h2><p>Celebrating restaurants making the biggest difference.</p></div></div>
+        <div id="lbBody"><div class="rw-state">Loading demo data…</div></div>
+      </section>
+</div>
+  </main>
+
+  <dialog id="profileDialog" aria-label="Restaurant profile">
+    <div class="dialog-head"><div><h2>Restaurant Profile</h2></div>
+      <button type="button" class="icon-btn" data-close-dialog aria-label="Close profile">✕</button></div>
+    <div class="dialog-body" id="profileBody"></div>
+  </dialog>
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <script src="rewards.js"></script>
+</body>
+</html>
